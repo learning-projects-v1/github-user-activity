@@ -1,0 +1,138 @@
+﻿1. Repository Commands
+1.1. List All Repositories
+Command: show-repo <username>
+
+Description: Displays all public repositories for the user.
+GitHub API Endpoint: /users/{username}/repos
+1.2. Show Repository Details
+Command: show-repo-details <username> <repo-name>
+
+Description: Shows detailed information about a specific repository.
+GitHub API Endpoint: /repos/{username}/{repo}
+1.3. List Forked Repositories
+Command: show-forks <username>
+
+Description: Lists repositories that the user has forked.
+GitHub API Endpoint: /users/{username}/repos?type=forks
+1.4. List Starred Repositories
+Command: show-stars <username>
+
+Description: Lists repositories the user has starred.
+GitHub API Endpoint: /users/{username}/starred
+1.5. List Languages Used in Repos
+Command: show-languages <username>
+
+Description: Shows the programming languages used across all public repositories of the user.
+GitHub API Endpoint: /repos/{username}/{repo}/languages
+2. Commit and Activity Commands
+2.1. List Latest Commits in Repositories
+Command: show-commits <username> <repo-name> [count]
+
+Description: Displays the latest commits made by the user in a specific repository. Optionally, you can specify how many commits to list.
+GitHub API Endpoint: /repos/{username}/{repo}/commits
+2.2. List User Events (Activity Feed)
+Command: show-activity <username>
+
+Description: Shows recent public activity (e.g., commits, pull requests, issues) for a user.
+GitHub API Endpoint: /users/{username}/events
+2.3. Show Commits by User in All Repos
+Command: show-all-commits <username> [count]
+
+Description: Lists all commits made by the user across all repositories.
+GitHub API Endpoint: /users/{username}/events?per_page={count} (Filter for commit events)
+2.4. Show Contributions to a Repository
+Command: show-contributions <username> <repo-name>
+
+Description: Displays the contributions (commits, issues, pull requests) made by a user to a particular repository.
+GitHub API Endpoint: /repos/{username}/{repo}/contributors
+3. Pull Request Commands
+3.1. Show Pull Requests Made by User
+Command: show-pulls <username> <repo-name>
+
+Description: Shows all pull requests created by the user for a specific repository.
+GitHub API Endpoint: /repos/{username}/{repo}/pulls?state=all
+3.2. List Open Pull Requests in Repositories
+Command: show-open-pulls <username>
+
+Description: Lists all open pull requests in repositories owned by the user.
+GitHub API Endpoint: /repos/{username}/{repo}/pulls?state=open
+3.3. Show Pull Request Details
+Command: show-pull-details <username> <repo-name> <pull-id>
+
+Description: Displays details of a specific pull request.
+GitHub API Endpoint: /repos/{username}/{repo}/pulls/{pull-id}
+4. Issue Tracking Commands
+4.1. List Open Issues in Repositories
+Command: show-issues <username>
+
+Description: Lists all open issues across the user’s repositories.
+GitHub API Endpoint: /repos/{username}/{repo}/issues?state=open
+4.2. List Issues Created by User
+Command: show-user-issues <username>
+
+Description: Lists issues created by the user across all repositories.
+GitHub API Endpoint: /search/issues?q=author:{username}
+4.3. Show Issue Details
+Command: show-issue-details <username> <repo-name> <issue-number>
+
+Description: Displays details about a specific issue in a repository.
+GitHub API Endpoint: /repos/{username}/{repo}/issues/{issue-number}
+5. Repository Statistics Commands
+5.1. Show Repo Contributors
+Command: show-contributors <username> <repo-name>
+
+Description: Lists all contributors for a specific repository.
+GitHub API Endpoint: /repos/{username}/{repo}/contributors
+5.2. Show Repository Statistics
+Command: show-repo-stats <username> <repo-name>
+
+Description: Displays statistics such as stars, forks, issues, and pull requests for a repository.
+GitHub API Endpoint: /repos/{username}/{repo}
+6. General User Info Commands
+6.1. Show User Profile
+Command: show-profile <username>
+
+Description: Displays the public profile information of the user, including name, bio, location, and number of public repos.
+GitHub API Endpoint: /users/{username}
+6.2. Show User Followers
+Command: show-followers <username>
+
+Description: Lists all followers of the user.
+GitHub API Endpoint: /users/{username}/followers
+6.3. Show Users Followed by User
+Command: show-following <username>
+
+Description: Lists all users followed by the specified username.
+GitHub API Endpoint: /users/{username}/following
+6.4. Show User's Public Gists
+Command: show-gists <username>
+
+Description: Lists all public gists created by the user.
+GitHub API Endpoint: /users/{username}/gists
+7. Search and Filter Commands
+7.1. Search Repositories by Keyword
+Command: search-repo <username> --keyword=<keyword>
+
+Description: Searches for repositories owned by the user that match a specific keyword in their description or name.
+GitHub API Endpoint: /search/repositories?q=user:{username}+{keyword}
+7.2. Filter Repositories by Language
+Command: filter-repos <username> --language=<language>
+
+Description: Filters the user’s repositories by the programming language.
+GitHub API Endpoint: /users/{username}/repos (You can filter on the client-side after fetching)
+7.3. Search Issues by Label
+Command: search-issues <username> --label=<label>
+
+Description: Searches for issues that have a specific label across the user’s repositories.
+GitHub API Endpoint: /search/issues?q=user:{username}+label:{label}
+8. Starred Repositories Commands
+8.1. Show Repositories Starred by the User
+Command: show-starred <username>
+
+Description: Lists all repositories starred by the user.
+GitHub API Endpoint: /users/{username}/starred
+8.2. Search Starred Repositories by Keyword
+Command: search-starred <username> --keyword=<keyword>
+
+Description: Searches the repositories starred by the user based on a keyword.
+GitHub API Endpoint: /users/{username}/starred (Search can be done client-side)

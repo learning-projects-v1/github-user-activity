@@ -1,0 +1,18 @@
+# Ignore Visual Studio temporary files, build results, and
+# folder config files that shouldn't be tracked by Git.
+
+.vs/
+.vscode/
+.vscode/*
+.vs/*
+*.user
+*.suo
+*.cache
+*.pdb
+*.obj
+*.exe
+*.dll
+*.log
+*.ipch
+*.dbmdl
+*.jfm
